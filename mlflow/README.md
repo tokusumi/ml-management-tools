@@ -1,11 +1,11 @@
-# No management tool
+# MLflow
 
 Configurations:
 
 * Config management: Typer
 * ML FW: TensorFlow (keras)
 * Hyperparameter search: keras-tuner
-* ML management tool: None (TensorBoard)
+* ML management tool: MLflow
 
 ## How to use
 
@@ -26,12 +26,21 @@ If you call `run.py` with a config python file name as follows (`a01`), the expe
 python3 run.py a01 
 ```
 
-Then, logs is saved at `logs/search/simple CNN architecture`. Path is defined at `configs/a01.py` or `configs/base.py`
+Then, logs is saved at `logs/search/simple CNN architecture` and `mlruns/`. Path is defined at `configs/a01.py` or `configs/base.py`
 
 ## How to visualize logs
 
-Use TensorBoard:
+Use MLflow UI:
 
 ```sh
-python3 -m tensorboard
+mlflow ui
+```
+
+## Implementation details
+
+Only add the followings lines in `main` function in `run.py` in `pure/run.py`:
+
+```python
+import mlflow
+mlflow.set_experiment(config.experiment_name)
 ```

@@ -1,0 +1,9 @@
+black==20.8b1
+flake8==3.8.4
+keras-tuner==1.0.2
+mlflow==1.12.1
+mypy==0.790
+mypy-extensions==0.4.3
+tensorflow==2.3.1
+tensorflow-datasets==4.1.0
+typer==0.3.2
