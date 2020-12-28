@@ -130,3 +130,9 @@ dmypy.json
 
 .vscode
 mlflow-env
+
+pure/logs/search/*
+
+mlflow/logs/search/*
+mlflow/mlruns/*
+
